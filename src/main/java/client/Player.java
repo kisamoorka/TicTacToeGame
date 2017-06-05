@@ -6,17 +6,9 @@ import org.jboss.netty.buffer.ChannelBuffer;
 import org.jboss.netty.channel.Channel;
 import org.jboss.netty.channel.Channels;
 import protocol.GameResponce;
-import server.Session;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
-import java.util.regex.Pattern;
-import java.util.stream.Stream;
 
 import static org.jboss.netty.buffer.ChannelBuffers.buffer;
 
@@ -101,13 +93,6 @@ class Player {
                 break;
             }
             case GameResponce.FAIL: {
-//                if ((x != -1) && (y != -1 )) {
-//                    if (gameField.setCell(x, y, enemyCellState)) {
-//                        System.out.println("--Противник сделал ход");
-//                        GameFieldDisplay.showField(gameField);
-//
-//                    }
-//                }
 
                 setEnemyStep(x, y);
                 System.out.println("--Вы проиграли.");
@@ -115,26 +100,14 @@ class Player {
                 break;
             }
             case  GameResponce.WIN:{
-//                if ((x != -1) && (y != -1 )) {
-//                    if (gameField.setCell(x, y, enemyCellState)) {
-//                        System.out.println("--Противник сделал ход");
-//                        GameFieldDisplay.showField(gameField);
-//
-//                    }
-//                }
+
                 setEnemyStep(x, y);
                 System.out.println("--Поздравляю, вы победили!");
                 channel.disconnect();
                 break;
             }
             case  GameResponce.DAWN :{
-//                if ((x != -1) && (y != -1 )) {
-//                    if (gameField.setCell(x, y, enemyCellState)) {
-//                        System.out.println("--Противник сделал ход");
-//                        GameFieldDisplay.showField(gameField);
-//
-//                    }
-//                }
+
                 setEnemyStep(x, y);
                 System.out.println("--Победила дружба =)");
                 channel.disconnect();
