@@ -45,7 +45,7 @@ public class PlayerChannelHandler extends SimpleChannelHandler {
 
     @Override
     public void channelDisconnected(ChannelHandlerContext ctx, ChannelStateEvent e) throws Exception {
-        System.out.println("--client disconnected--");
+        System.out.println("--отключаемся от сервера--");
         e.getChannel().close();
     }
 }
